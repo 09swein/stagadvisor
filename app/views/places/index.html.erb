@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Image</th>
       <th>Description</th>
       <th>Attractions</th>
       <th>Restaurants</th>
@@ -18,6 +19,7 @@
     <% @places.each do |place| %>
       <tr>
         <td><%= place.title %></td>
+        <td><%= image_tag place.image.url(:thumb) %></td>
         <td><%= place.description %></td>
         <td><%= place.attractions %></td>
         <td><%= place.restaurants %></td>
