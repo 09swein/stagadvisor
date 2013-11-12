@@ -12,6 +12,7 @@ group :production do
      gem 'rails_12factor'
 end
 
+gem 'aws-sdk', '~> 1.20.0'
 gem 'paperclip', '~> 3.0'
 gem 'devise', '~> 3.1.1'
 gem 'sass-rails', '~> 4.0.0'
