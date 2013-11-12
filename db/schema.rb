@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131110205304) do
+ActiveRecord::Schema.define(version: 20131112023031) do
+
+  create_table "places", force: true do |t|
+    t.string   "description"
+    t.string   "attractions"
+    t.string   "restaurants"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
