@@ -3,9 +3,11 @@
 <table>
   <thead>
     <tr>
+      <th>Title</th>
       <th>Description</th>
       <th>Attractions</th>
       <th>Restaurants</th>
+      <th>Author</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,6 +21,7 @@
         <td><%= place.description %></td>
         <td><%= place.attractions %></td>
         <td><%= place.restaurants %></td>
+        <td><%= place.user.email if place.user%></td>
         <td><%= link_to 'Show', place %></td>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,5 +31,7 @@
 </table>
 
 <br>
+<% if user_signed_in? %>
+  <%= link_to 'New Place', new_place_path %>
+<% end %>
 
-<%= link_to 'New Place', new_place_path %>

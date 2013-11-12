@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   # GET /places
@@ -14,7 +15,7 @@ class PlacesController < ApplicationController
 
   # GET /places/new
   def new
-    @place = Place.new
+    @place = current_user.places.build
   end
 
   # GET /places/1/edit
@@ -24,7 +25,7 @@ class PlacesController < ApplicationController
   # POST /places
   # POST /places.json
   def create
-    @place = Place.new(place_params)
+    @place = current_user.places.build(place_params)
 
     respond_to do |format|
       if @place.save
@@ -65,6 +66,11 @@ class PlacesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_place
       @place = Place.find(params[:id])
+    end
+
+    def correct_user
+      @place = current_user.placess.find_by(id: params[:id])
+      redirect_to places_path, notice: "Not authorized to edit this place" if @places.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
