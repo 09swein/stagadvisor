@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
+    @places = Place.all.order("created_at DESC")
   end
 
   # GET /places/1
