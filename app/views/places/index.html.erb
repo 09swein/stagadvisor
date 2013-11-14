@@ -1,39 +1,15 @@
-<h1>Listing places</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>Description</th>
-      <th>Attractions</th>
-      <th>Restaurants</th>
-      <th>Author</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @places.each do |place| %>
-      <tr>
-        <td><%= place.title %></td>
-        <td><%= image_tag place.image.url(:thumb) %></td>
-        <td><%= place.description %></td>
-        <td><%= place.attractions %></td>
-        <td><%= place.restaurants %></td>
-        <td><%= place.user.email if place.user%></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<% if user_signed_in? %>
-  <%= link_to 'New Place', new_place_path %>
-<% end %>
-
+<div id="places" class="transition-enabled">
+  <% @places.each do |place| %>
+    <div class="box panel panel-default">
+      <%= image_tag place.image.url(:medium) %>
+        <%= place.title %>
+        <%= place.description %>
+        <%= place.attractions %>
+        <%= place.restaurants %>
+        <%= place.user.email if place.user%>
+        <%= link_to 'Show', place_path(place) %>
+        <%= link_to 'Edit', edit_place_path(place) %>
+        <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>

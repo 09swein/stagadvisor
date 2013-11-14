@@ -2,7 +2,7 @@ Stagadvisor::Application.routes.draw do
   resources :places
 
   devise_for :users
-  root "pages#home"
+  root "places#index"
   get "about" => "pages#about"
   get "contact" => "pages#contact"
   # The priority is based upon order of creation: first created -> highest priority.
