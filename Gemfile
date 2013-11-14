@@ -23,6 +23,8 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'masonry-rails', '~> 0.2.0'
 gem 'jbuilder', '~> 1.2'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 group :doc do
   gem 'sdoc', require: false

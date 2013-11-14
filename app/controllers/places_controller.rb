@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all.order("created_at DESC")
+    @places = Place.all.order("created_at DESC").paginate(:page => params[:page],:per_page => 3)
   end
 
   # GET /places/1
