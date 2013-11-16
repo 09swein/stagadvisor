@@ -1,5 +1,11 @@
 Stagadvisor::Application.routes.draw do
+  resources :comments
+
   resources :places
+
+  resources :places do
+    resources :comments
+  end
 
   devise_for :users
   root "places#index"

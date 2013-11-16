@@ -18,8 +18,18 @@ Back
 							 <span class="glyphicon glyphicon-edit"></span> Edit
       			<% end %>
 					</div>
+				
 				</div>
+
 			</div>
+			<%= form_for [@place, Comment.new] do |f| %>
+				<p>
+					<%= f.text_field :body, class:"form-control"  %>
+				</p>
+				<p><%=f.submit "Add Comment", class: "btn btn-primary" %></p>
+			<%end%>
+
+			<%= render :partial => @place.comments %>
 		</div>
 	</div>
 </div>
