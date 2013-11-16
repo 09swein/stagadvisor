@@ -7,6 +7,10 @@ Stagadvisor::Application.routes.draw do
     resources :comments
   end
 
+  resources :users do 
+  resources :comments 
+end
+
   devise_for :users
   root "places#index"
   get "about" => "pages#about"

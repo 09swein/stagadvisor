@@ -69,12 +69,12 @@ class PlacesController < ApplicationController
     end
 
     def correct_user
-      @place = current_user.placess.find_by(id: params[:id])
+      @place = current_user.places.find_by(id: params[:id])
       redirect_to places_path, notice: "Not authorized to edit this place" if @places.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:title,:headline, :comment, :hotel, :image, :description, :attractions, :restaurants)
+      params.require(:place).permit(:title,:headline, :hotel, :image, :description, :attractions, :restaurants)
     end
 end

@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
   def create
     @place = Place.find(params[:place_id])
     @comment = @place.comments.create(comment_params)
+    @comment.user_id = current_user.id
 
     respond_to do |format|
       if @comment.save
@@ -71,6 +72,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:place_id, :body)
+      params.require(:comment).permit(:place_id, :body, :user_id)
     end
 end
