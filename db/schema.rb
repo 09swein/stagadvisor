@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131117172248) do
+ActiveRecord::Schema.define(version: 20131117182843) do
 
   create_table "comments", force: true do |t|
     t.integer  "place_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20131117172248) do
     t.datetime "image_updated_at"
     t.string   "headline"
     t.string   "hotel"
+    t.string   "ladies"
   end
 
   add_index "places", ["user_id"], name: "index_places_on_user_id"
