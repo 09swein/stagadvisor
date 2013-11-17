@@ -4,11 +4,10 @@ class Place < ActiveRecord::Base
 	has_many :comments, :order => "created_at DESC"
 
 	validates :image, presence: true
-	validates :image, format: {with: %r{\.gif|jpg|png}i, message: 'must be a url for gif, jpg, or png image.'}
-	validates_size_of :image, maximum: 1.megabytes
+	validates :image, format: {with: %r{\.gif|jpg|png|jpeg}i, message: 'must be a url for gif, jpg, jpeg, or png image.'}
   	validates :title, presence: true, uniqueness: true 
   	validates :headline, presence: true
-  	validates :headline, length: {maximum: 120}
+  	validates :headline, length: {maximum: 60}
   	validates :description, presence: true
   	validates :attractions, presence: true
   	validates :restaurants, presence: true
