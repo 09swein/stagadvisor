@@ -1,17 +1,17 @@
 Stagadvisor::Application.routes.draw do
   resources :comments
-
+  devise_for :users
   resources :places
 
   resources :places do
     resources :comments
   end
 
-  resources :users do 
-  resources :comments 
-end
+  resources :user do 
+    resources :comments 
+  end
 
-  devise_for :users
+
   root "places#index"
   get "about" => "pages#about"
   get "contact" => "pages#contact"
