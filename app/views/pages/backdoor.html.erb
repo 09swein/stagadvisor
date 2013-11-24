@@ -1,0 +1,15 @@
+<%if current_user.try(:admin?)%>
+<%= render 'pages/backdoorheader' %>
+<h4> All Users</h4>
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <%= user.email %>
+  <%= button_to "Delete Account", registration_path(user), :data => { :confirm => "Are you sure? This is irreversible" }, :method => :delete, class: "btn btn-warning" %>
+<% end %>
+
+
+<%else%>
+
+<p>This isn't the page you were looking for... </p><%= link_to 'Click Here To Return to Homepage', root_path %>
+
+<%end%>

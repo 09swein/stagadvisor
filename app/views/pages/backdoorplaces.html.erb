@@ -1,0 +1,27 @@
+<%if current_user.try(:admin?)%>
+<%= render 'pages/backdoorheader' %>
+<h4> All Places</h4>
+<% @backdoorplaces = Place.all %>
+<% @backdoorplaces.each do |place| %>
+ <%= place.title %>
+ <%= place.user.name if place.user %>
+ <%= link_to image_tag(place.image.url(:thumb)),place %>
+ <%= place.headline %></em>
+ <div class="actions">
+     <%= link_to edit_place_path(place) do %>
+      <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %> |
+            <%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+                Delete
+            <% end %>
+
+<% end %>
+
+
+<%else%>
+
+<p>This isn't the page you were looking for... </p><%= link_to 'Click Here To Return to Homepage', root_path %>
+
+<%end%>

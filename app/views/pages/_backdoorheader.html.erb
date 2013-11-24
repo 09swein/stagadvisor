@@ -1,0 +1,8 @@
+<h2> Welcome to the Backdoor! </h2>
+<h6> All of your actions are being logged, so be very careful, or your privledges may get revoked</h6>
+
+<ul class="nav nav-pills">
+  <li class="<%= 'active' if current_page?(backdoor_path) %>"><%= link_to "Users", backdoor_path %></li> 
+  <li class="<%= 'active' if current_page?(comments_path) %>"><%= link_to "Comments", comments_path %></li> 
+  <li class="<%= 'active' if current_page?(backdoorplaces_path) %>"><%= link_to "Articles", backdoorplaces_path %></li> 
+</ul>

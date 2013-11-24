@@ -5,4 +5,8 @@ class PagesController < ApplicationController
   end
   def contact
   end
+  def backdoor
+  end
+  def backdoorplaces
+  end
 end
