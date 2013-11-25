@@ -1,10 +1,22 @@
 <%if current_user.try(:admin?)%>
 <%= render 'pages/backdoorheader' %>
+
+<h4> Admin Users</h4>
+<% @users = User.all %>
+<% @users.each do |user| %>
+	<%if user.admin%>
+	  <%= user.email %>
+	  <%= user.sign_in_count %>
+	<br/>
+	<% end %>
+<% end %>
+
 <h4> All Users</h4>
 <% @users = User.all %>
 <% @users.each do |user| %>
   <%= user.email %>
-  <%= button_to "Delete Account", registration_path(user), :data => { :confirm => "Are you sure? This is irreversible" }, :method => :delete, class: "btn btn-warning" %>
+  <%= user.sign_in_count %>
+<br/>
 <% end %>
 
 

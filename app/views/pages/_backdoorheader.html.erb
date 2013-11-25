@@ -1,5 +1,6 @@
 <h2> Welcome to the Backdoor! </h2>
 <h6> All of your actions are being logged, so be very careful, or your privledges may get revoked</h6>
+<h5><%=User.all.count%> Users | <%=Place.all.count%> Articles | <%=Comment.all.count%> Comments </h5><br/>
 
 <ul class="nav nav-pills">
   <li class="<%= 'active' if current_page?(backdoor_path) %>"><%= link_to "Users", backdoor_path %></li> 
