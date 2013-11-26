@@ -1,5 +1,8 @@
 <h1>New place</h1>
-
+<%if current_user.try(:admin?) or current_user.try(:editor?) %>
 <%= render 'form' %>
+<%else%>
 
-<%= link_to 'Back', places_path %>
+<p>This isn't the page you were looking for... </p><%= link_to 'Click Here To Return to Homepage', root_path %>
+
+<%end%>

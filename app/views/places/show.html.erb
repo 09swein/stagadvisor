@@ -1,3 +1,4 @@
+
 <%= link_to places_path do %>
 <span class = "glyphicon glyphicon-chevron-left"></span>
 Back
@@ -23,14 +24,19 @@ Back
 				</div>
 
 			</div>
-			<%= form_for [@place, Comment.new] do |f| %>
-				<p>
-					<%= f.text_field :body, class:"form-control"  %>
-				</p>
-				<p><%=f.submit "Add Comment", class: "btn btn-primary" %></p>
+			<% if user_signed_in? %>
+				<%= form_for [@place, Comment.new] do |f| %>
+					<p>
+						<%= f.text_field :body, class:"form-control"  %>
+					</p>
+					<p><%=f.submit "Add Comment", class: "btn btn-primary" %></p>
+				<%end%>
+			<%else%>
+				<%= link_to "Quick Sign Up to Comment", new_user_registration_path, class: "btn btn-primary"%>
 			<%end%>
-
+			<h6> All Comments </h6>
 			<%= render :partial => @place.comments %>
 		</div>
 	</div>
 </div>
+

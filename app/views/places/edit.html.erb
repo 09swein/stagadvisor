@@ -1,6 +1,11 @@
 <h1>Editing place</h1>
-
+<%if current_user.try(:admin?) or current_user.try(:editor?) %>
 <%= render 'form' %>
 
 <%= link_to 'Show', @place %> |
 <%= link_to 'Back', places_path %>
+<%else%>
+
+<p>This isn't the page you were looking for... </p><%= link_to 'Click Here To Return to Homepage', root_path %>
+
+<%end%>
