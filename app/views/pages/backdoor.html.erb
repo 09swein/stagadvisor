@@ -5,6 +5,7 @@
 <% @users = User.all %>
 <% @users.each do |user| %>
 	<%if user.admin%>
+	  <%= user.name %>
 	  <%= user.email %>
 	  <%= user.sign_in_count %>
 	<br/>

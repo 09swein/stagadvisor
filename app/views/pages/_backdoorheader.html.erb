@@ -1,4 +1,4 @@
-<h2> Welcome to the Backdoor! </h2>
+<h2> Welcome to the Backdoor, <%= current_user.name %>! </h2>
 <h6> All of your actions are being logged, so be very careful, or your privledges may get revoked</h6>
 <h5><%=User.all.count%> Users | <%=Place.all.count%> Articles | <%=Comment.all.count%> Comments </h5><br/>
 
