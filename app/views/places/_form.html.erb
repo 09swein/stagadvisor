@@ -29,6 +29,24 @@
     <%= f.label :description %><br>
     <%= f.text_field :description, class:"form-control"%>
   </div>
+
+
+<div class="form_group">
+    <%= f.label "Attraction Rating" %><br />
+    <%= f.label :attractionstars, "1", :value => 1  %>
+    <%= f.radio_button :attractionstars, 1, :checked =>true %>
+    <%= f.label :attractionstars, "2", :value => 2 %>
+    <%= f.radio_button :attractionstars, 2 %>
+    <%= f.label :attractionstars, "3", :value => 3 %>
+    <%= f.radio_button :attractionstars, 3 %>
+    <%= f.label :attractionstars, "4", :value => 4 %>
+    <%= f.radio_button :attractionstars, 4 %>
+    <%= f.label :attractionstars, "5", :value => 5 %>
+    <%= f.radio_button :attractionstars, 5 %>
+</div>
+
+
+
   <div class="form-group">
     <%= f.label :attractions %><br>
     <%= f.text_field :attractions, class:"form-control"  %>
