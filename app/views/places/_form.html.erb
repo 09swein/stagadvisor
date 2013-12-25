@@ -31,7 +31,7 @@
   </div>
 
 
-<div class="form_group">
+  <div class="form_group">
     <%= f.label "Attraction Rating" %><br />
     <%= f.label :attractionstars, "1", :value => 1  %>
     <%= f.radio_button :attractionstars, 1, :checked =>true %>
@@ -43,7 +43,7 @@
     <%= f.radio_button :attractionstars, 4 %>
     <%= f.label :attractionstars, "5", :value => 5 %>
     <%= f.radio_button :attractionstars, 5 %>
-</div>
+  </div>
 
 
 
@@ -51,14 +51,66 @@
     <%= f.label :attractions %><br>
     <%= f.text_field :attractions, class:"form-control"  %>
   </div>
+
+  <div class="form_group">
+    <%= f.label "Restaurant Rating" %><br />
+    <%= f.label :restaurantstars, "1", :value => 1  %>
+    <%= f.radio_button :restaurantstars, 1, :checked =>true %>
+    <%= f.label :restaurantstars, "2", :value => 2 %>
+    <%= f.radio_button :restaurantstars, 2 %>
+    <%= f.label :restaurantstars, "3", :value => 3 %>
+    <%= f.radio_button :restaurantstars, 3 %>
+    <%= f.label :restaurantstars, "4", :value => 4 %>
+    <%= f.radio_button :restaurantstars, 4 %>
+    <%= f.label :restaurantstars, "5", :value => 5 %>
+    <%= f.radio_button :restaurantstars, 5 %>
+  </div>
+
   <div class="form-group">
     <%= f.label :restaurants %><br>
     <%= f.text_field :restaurants, class:"form-control"  %>
   </div>
+
+  <div class="form_group">
+    <%= f.label "Ladies Rating" %><br />
+    <%= f.label :ladiesstars, "1", :value => 1  %>
+    <%= f.radio_button :ladiesstars, 1, :checked =>true %>
+    <%= f.label :ladiesstars, "2", :value => 2 %>
+    <%= f.radio_button :ladiesstars, 2 %>
+    <%= f.label :ladiesstars, "3", :value => 3 %>
+    <%= f.radio_button :ladiesstars, 3 %>
+    <%= f.label :ladiesstars, "4", :value => 4 %>
+    <%= f.radio_button :ladiesstars, 4 %>
+    <%= f.label :ladiesstars, "5", :value => 5 %>
+    <%= f.radio_button :ladiesstars, 5 %>
+  </div>
+
+
   <div class="form-group">
     <%= f.label :ladies %><br>
     <%= f.text_field :ladies, class:"form-control"  %>
   </div>
+
+  <div class="form_group">
+    <%= f.label "Hotel Rating" %><br />
+    <%= f.label :hotelstars, "1", :value => 1  %>
+    <%= f.radio_button :hotelstars, 1, :checked =>true %>
+    <%= f.label :hotelstars, "2", :value => 2 %>
+    <%= f.radio_button :hotelstars, 2 %>
+    <%= f.label :hotelstars, "3", :value => 3 %>
+    <%= f.radio_button :hotelstars, 3 %>
+    <%= f.label :hotelstars, "4", :value => 4 %>
+    <%= f.radio_button :hotelstars, 4 %>
+    <%= f.label :hotelstars, "5", :value => 5 %>
+    <%= f.radio_button :hotelstars, 5 %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :hotel %><br>
+    <%= f.text_field :hotel, class:"form-control"  %>
+  </div>
+
   <div class = "form-group">
     <%= f.submit class: "btn btn-primary" %>
   </div>
