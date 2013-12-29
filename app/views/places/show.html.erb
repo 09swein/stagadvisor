@@ -11,6 +11,7 @@ Back
 				
 				<p><%= image_tag @place.image.url(:medium) %></p>
 					<div class="panel-body">
+						<p><%= show_stars @place%></p>
 					<p><strong>Description:</strong><%= @place.description %></p>
 					<p><strong>Attractions:</strong><%= @place.attractions %></p>
 					<p><strong>Restaurants:</strong><%= @place.restaurants %></p>
