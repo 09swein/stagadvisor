@@ -11,7 +11,12 @@ Back
 				
 				<p><%= image_tag @place.image.url(:medium) %></p>
 					<div class="panel-body">
-						<p><%= show_stars @place%></p>
+					 	<div class="well">
+						<p>Attraction Rating: </br><%= show_attraction_stars @place%></p>
+						<p>Restaurant Rating:</br><%= show_restaurant_stars @place%></p>
+						<p>Hotel Rating:</br><%= show_hotel_stars @place%></p>
+						<p>Ladies Rating:</br><%= show_ladies_stars @place%></p>
+						</div>
 					<p><strong>Description:</strong><%= @place.description %></p>
 					<p><strong>Attractions:</strong><%= @place.attractions %></p>
 					<p><strong>Restaurants:</strong><%= @place.restaurants %></p>
