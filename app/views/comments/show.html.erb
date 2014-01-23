@@ -1,3 +1,5 @@
+/*This does not show up on the bottom of the article. You would be looking for _comment.html.erb partical 
+*/
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -9,6 +11,7 @@
   <strong>Body:</strong>
   <%= @comment.body %>
 </p>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%if current_user.try(:admin?) %>
+	<%= link_to 'Edit', edit_comment_path(@comment) %> |
+	<%= link_to 'Back', comments_path %>
+<%end%>

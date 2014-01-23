@@ -1,6 +1,11 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h1>Sign up</h1>
+    <div class = "signin_alt"
+      <%- if controller_name != 'sessions' %>
+        <p> Already a Member? <%= link_to "Sign in Here", new_session_path(resource_name), class: "btn btn-default"%> </p>
+      <% end -%>
+</div>
   </div>
 
   <div class="panel-body">

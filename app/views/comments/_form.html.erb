@@ -1,21 +1,18 @@
 <%= form_for(@comment) do |f| %>
   <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+    <div id="comment_error_explanation">
+      <p> You cannot leave a blank comment</p>
+      <p> Please Go Back and Try Again</p>
+      <%= link_to 'Go Back', comments_path %> 
+    </div>
+  <%else%>
 
-      <ul>
-      <% @comment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div class="field">
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

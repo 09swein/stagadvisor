@@ -3,10 +3,10 @@
     	<strong> Posted By <%=comment.user_name%> </strong><%= time_ago_in_words(comment.created_at) %> ago </br>
     	<%= h(comment.body)%>
   	</p>
+	<%if current_user.try(:admin?)%>
 	<%= link_to 'Show', comment %>
 	<%= link_to 'Edit', edit_comment_path(comment) %>
-	<%if current_user.try(:admin?)%>
-		<%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
 	<%end%>
 
 <%end%>

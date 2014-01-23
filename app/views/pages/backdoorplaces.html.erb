@@ -1,24 +1,41 @@
 <%if current_user.try(:admin?)%>
 <%= render 'pages/backdoorheader' %>
 <h4> All Places</h4>
-<% @backdoorplaces = Place.all %>
-<% @backdoorplaces.each do |place| %>
- <%= place.title %>
- <%= place.user.name if place.user %>
- <%= link_to image_tag(place.image.url(:thumb)),place %>
- <%= place.headline %></em>
- <div class="actions">
-     <%= link_to edit_place_path(place) do %>
-      <span class="glyphicon glyphicon-edit"></span>
+	<table class="table table-striped">
+	 <thead>
+		<tr>
+		<th>Title</th>
+		<th>Editor Name</th>
+		<th>Editor Email</th>
+		<th>Image</th>
+		<th>Headline</th>
+		<th>Admin Options</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @backdoorplaces = Place.all %>
+		<% @backdoorplaces.each do |place| %>
+		<tr>
+			 <td><%= place.title %></td>
+			 <td><%= place.user.name if place.user %></td>
+			 <td><%= place.user.email if place.user %></td>
+			 <td><%= link_to image_tag(place.image.url(:thumb)),place %></td>
+			 <td><%= place.headline %></td>
+ 			 <td>
+ 			 	<div class="actions">
+     				<%= link_to edit_place_path(place) do %>
+      				<span class="glyphicon glyphicon-edit"></span>
               Edit
             <% end %> |
             <%= link_to place, method: :delete, data: { confirm: 'Are you sure?' } do %>
               <span class="glyphicon glyphicon-trash"></span>
                 Delete
-            <% end %>
+            <% end %></td>
+     </tr>
 
-<% end %>
-
+		<% end %>
+	</tbody>
+ </table>
 
 <%else%>
 

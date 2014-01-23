@@ -2,27 +2,25 @@
 <%= render 'pages/backdoorheader' %>
 <h1>All comments</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Place</th>
-      <th>User</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <th>Place Number</th>
+    <th>Commentor Name</th>
+    <th>Comment Body</th>
+    <th>Admin Options</th>
+</thead>
 
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.place_id %></td>
         <td><%= comment.user_name %></td>
+
         <td><%= comment.body %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', comment %>
+            <%= link_to 'Edit', edit_comment_path(comment) %>
+            <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
