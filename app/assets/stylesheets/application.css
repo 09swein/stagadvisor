@@ -14,3 +14,27 @@
  *= require_tree .
  */
 
+body {
+	background: url('wood3.jpg');
+	background-size: 100%;
+}
+
+.navbar-custom {
+	background-color: #A8A8A8;
+	border-color: #000000;
+	border-width: 10px;
+}
+
+.logo {
+	height: 100%;
+	max-width: 300px;
+	max-height:5px;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 1px;
+}

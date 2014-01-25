@@ -1,14 +1,22 @@
 
-<%= link_to places_path do %>
-<span class = "glyphicon glyphicon-chevron-left"></span>
-Back
-<%end%>
+
 <div class="row">
 	<div class="col-md-offset2 col-md-8">
 		<div class="panel panel-default">
 			<div class="panel-heading center">
+				<%= link_to places_path do %>
+					<span class = "glyphicon glyphicon-chevron-left"></span>
+					Back
+				<%end%>
+
 				<h2><%= @place.title %></h2>
-				
+				<% if @place.user == current_user %>
+					<div class="actions">
+		       	<%= link_to edit_place_path(@place) do %>
+		         	<span class="glyphicon glyphicon-edit"></span>                	Edit
+		     		<%end%> 
+	      	</div>
+				<%end%>
 				<p><%= image_tag @place.image.url(:medium) %></p>
 					<div class="panel-body">
 					 	<div class="well">
