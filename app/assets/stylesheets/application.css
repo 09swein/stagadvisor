@@ -20,15 +20,19 @@ body {
 }
 
 .navbar-custom {
-	background-color: #A8A8A8;
+	background-color: #7f8c8d;
 	border-color: #000000;
 	border-width: 10px;
 }
 
+.logo img{
+	height: 40%;
+	max-width: 100%;
+	max-height: 80px;
+}
+
 .logo {
-	height: 100%;
-	max-width: 300px;
-	max-height:5px;
+	max-height: 50px;
 }
 
 .navbar-toggle .icon-bar {
@@ -37,4 +41,28 @@ body {
   height: 2px;
   background-color: #000000;
   border-radius: 1px;
+}
+
+.panel-default-custom {
+	margin-top: 80px;
+	background-color: #ecf0f1;
+}
+
+.panel-heading {
+	background-color: #ecf0f1;
+}
+
+.panel-title{
+	background-color: #ecf0f1;
+}
+.panel-body-index {
+	background-color: #ecf0f1;
+	text-align: center;
+}
+
+.index-actions {
+	margin-bottom: 5px;
+	display: block;
+	margin-right: 0px;
+	margin-left: auto;
 }

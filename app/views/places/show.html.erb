@@ -1,44 +1,48 @@
 
 
 <div class="row">
-	<div class="col-md-offset2 col-md-8">
-		<div class="panel panel-default">
-			<div class="panel-heading center">
+	<div class="col-md-offset2 col-md-9">
+		<div class="panel panel-default-custom">
+			<div class="panel-heading-custom">
 				<%= link_to places_path do %>
-					<span class = "glyphicon glyphicon-chevron-left"></span>
-					Back
+					<span class = "glyphicon glyphicon-chevron-left"></span>Back
 				<%end%>
-
-				<h2><%= @place.title %></h2>
-				<% if @place.user == current_user %>
-					<div class="actions">
+				<% if current_user.try(:admin?) or  @place.user == current_user %>
+					<div class="actions-top">
 		       	<%= link_to edit_place_path(@place) do %>
 		         	<span class="glyphicon glyphicon-edit"></span>                	Edit
 		     		<%end%> 
 	      	</div>
 				<%end%>
+				<div class="panel-title">
+					<h2><%= @place.title %></h2>
+					<h3 class="headline"><%= @place.headline %></h3>
+				</div>
 				<p><%= image_tag @place.image.url(:medium) %></p>
 					<div class="panel-body">
-					 	<div class="well">
+					 	<!--<div class="well">
 						<p>Attraction Rating: </br><%= show_attraction_stars @place%></p>
 						<p>Restaurant Rating:</br><%= show_restaurant_stars @place%></p>
 						<p>Hotel Rating:</br><%= show_hotel_stars @place%></p>
 						<p>Ladies Rating:</br><%= show_ladies_stars @place%></p>
-						</div>
-					<p><strong>Description:</strong><%= @place.description %></p>
-					<p><strong>Attractions:</strong><%= @place.attractions %></p>
-					<p><strong>Restaurants:</strong><%= @place.restaurants %></p>
-					<p><strong>Ladies:</strong><%= @place.ladies %></p>
-					<%if current_user.try(:admin?) or current_user.try(:editor?) %>
-						<div class = "actions">
-							<%= link_to edit_place_path(@place) do %> 
-								 <span class="glyphicon glyphicon-edit"></span> Edit
-	      					<% end %>
-						</div>
-					<%end%>
+						</div>-->
+						<ul class="list-group">
+							<li class="list-group-item">
+							
+								</br><%= @place.description %>
+							</li>
+							<li class="list-group-item">
+								<h1>Attractions:  <%= show_attraction_stars @place%></h1>
+								</br><%= @place.attractions %>
+							</li>
+							<li class="list-group-item"><h1>Restaurants:  <%= show_restaurant_stars @place%></h1>
+							</br><%= @place.restaurants %></li>
+							<li class="list-group-item"><h1>Ladies:  <%= show_ladies_stars @place%></h1></br><%= @place.ladies %></li>
+							<li class="list-group-item"><h1>Hotels:  <%= show_hotel_stars @place%></h1><%= @place.hotel %></li>
+						</ul>
+					</div>
 				</div>
 
-			</div>
 			<% if user_signed_in? %>
 				<%= form_for [@place, Comment.new] do |f| %>
 					<p>
@@ -51,7 +55,13 @@
 			<%end%>
 			<h6> All Comments </h6>
 			<%= render :partial => @place.comments %>
+		 </div>
 		</div>
 	</div>
+
+	<div class="col-md-3">
+		This is where I would list Other Articles!
+	</div>
+
 </div>
 
