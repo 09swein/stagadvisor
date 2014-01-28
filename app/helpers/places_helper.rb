@@ -1,5 +1,9 @@
 module PlacesHelper
 
+	def show_overall_stars(place)
+  	image_tag "#{place.overallstars}stars.png"
+	end
+
 	def show_attraction_stars(place)
   	image_tag "#{place.attractionstars}stars.png"
 	end

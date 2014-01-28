@@ -9,6 +9,10 @@
       </div>
       <div class="index-actions">
          <%= link_to "Read The Review", place, :class => "btn-sm btn-primary indexbutton"%>
+         
+    
+          <h1><%= show_overall_stars place if place.overallstars %></h1>
+  
       </div>
       <div class="panel-body-index">
        

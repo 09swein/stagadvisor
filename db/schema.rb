@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20131213234217352) do
     t.integer  "attractionstars"
     t.integer  "ladiesstars"
     t.integer  "hotelstars"
+    t.integer  "overallstars"
   end
 
   add_index "places", ["user_id"], name: "index_places_on_user_id"

@@ -25,6 +25,21 @@
     <%= f.label :headline %><br>
     <%= f.text_field :headline, class:"form-control"  %>
   </div>
+
+  <div class="form_group">
+    <%= f.label "Overall Rating" %><br />
+    <%= f.label :overallstars, "1", :value => 1  %>
+    <%= f.radio_button :overallstars, 1, :checked =>true %>
+    <%= f.label :overallstars, "2", :value => 2 %>
+    <%= f.radio_button :overallstars, 2 %>
+    <%= f.label :overallstars, "3", :value => 3 %>
+    <%= f.radio_button :overallstars, 3 %>
+    <%= f.label :overallstars, "4", :value => 4 %>
+    <%= f.radio_button :overallstars, 4 %>
+    <%= f.label :overallstars, "5", :value => 5 %>
+    <%= f.radio_button :overallstars, 5 %>
+  </div>
+
   <div class = "form-group">
     <%= f.label :description %><br>
     <%= f.text_field :description, class:"form-control"%>

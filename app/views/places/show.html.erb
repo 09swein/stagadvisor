@@ -17,6 +17,7 @@
 				<div class="panel-title">
 					<h2><%= @place.title %></h2>
 					<h3 class="headline"><%= @place.headline %></h3>
+					<h1><%= show_overall_stars @place if @place.overallstars %></h1>
 				</div>
 				<p><%= image_tag @place.image.url(:medium) %></p>
 					<div class="panel-body">
