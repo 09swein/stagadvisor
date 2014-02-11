@@ -1,18 +1,19 @@
-<%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="comment_error_explanation">
-      <p> You cannot leave a blank comment</p>
-      <p> Please Go Back and Try Again</p>
-      <%= link_to 'Go Back', comments_path %> 
-    </div>
-  <%else%>
 
-    <div class="field">
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+  <%= form_for(@comment) do |f| %>
+    <% if @comment.errors.any? %>
+      <div id="comment_error_explanation">
+        <p> You cannot leave a blank comment</p>
+        <p> Please Go Back and Try Again</p>
+        <%= link_to 'Go Back', comments_path %> 
+      </div>
+    <%else%>
+
+      <div class="field">
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>

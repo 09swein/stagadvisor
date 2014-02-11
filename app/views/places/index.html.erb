@@ -2,18 +2,19 @@
 <div id="places" class="transition-enabled">
   <% @places.each do |place| %>
   <div class="box panel panel-default-custom">
-    <div class="panel-heading-custom">
+    
       <div class="panel-title center">
         <h3><%= place.title %></h3>
+        <%= show_overall_stars place if place.overallstars %>
         <h5 class="headline"> <%= place.headline %></h5>
       </div>
       <div class="index-actions">
-         <%= link_to "Read The Review", place, :class => "btn-sm btn-primary indexbutton"%>
-         
-    
-          <h1><%= show_overall_stars place if place.overallstars %></h1>
-  
+
+        
+        <%= link_to "Read The Review", place, :class => "btn-sm btn-primary indexbutton"%>
+       
       </div>
+      <div class="panel-heading-custom">
       <div class="panel-body-index">
        
         <%= link_to image_tag(place.image.url(:medium)),place %>
@@ -27,8 +28,10 @@
                 <span class="glyphicon glyphicon-trash"></span>
                   Delete
               <% end %>
+            
             </div>
           <%end%>
+        
         </div>  
     </div>
   </div>
