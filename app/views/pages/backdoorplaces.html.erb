@@ -1,3 +1,4 @@
+<div class="static panel panel-default">
 <%if current_user.try(:admin?)%>
 <%= render 'pages/backdoorheader' %>
 <h4> All Places</h4>
@@ -42,3 +43,4 @@
 <p>This isn't the page you were looking for... </p><%= link_to 'Click Here To Return to Homepage', root_path %>
 
 <%end%>
+</div>

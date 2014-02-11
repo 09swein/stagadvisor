@@ -4,7 +4,7 @@
 
 #places {
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 0px;
 }
 
 .box {
@@ -13,6 +13,10 @@
   background-color: #ecf0f1;
 }
 
+.panel-default-custom {
+  background-color: #ecf0f1;
+
+}
 .box img {
   width: 100%;
 }
@@ -25,9 +29,6 @@
   background-color: #ecf0f1;
 }
 
-.panel-default-custom {
-  background-color: #ecf0f1;
-}
 
 .panel-heading-custom  {
 
@@ -38,10 +39,6 @@
     max-width: 30%;
 }
 
-#panel-default {
-  margin: 0 auto;
-
-}
 
 .list-group img {
 	display: inline-block;

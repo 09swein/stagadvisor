@@ -3,14 +3,13 @@
 <div class="row">
 	<div class="col-md-offset2 col-md-9">
 		<div class="panel panel-default-custom">
-			
 				<%= link_to places_path do %>
 					<span class = "glyphicon glyphicon-chevron-left"></span>Back
 				<%end%>
 				<% if current_user.try(:admin?) or  @place.user == current_user %>
 					<div class="actions-top">
-		       	<%= link_to edit_place_path(@place) do %>
-		         	<span class="glyphicon glyphicon-edit"></span>                	Edit
+		       			<%= link_to edit_place_path(@place) do %>
+		         	<span class="glyphicon glyphicon-edit"></span>Edit
 		     		<%end%> 
 	      	</div>
 				<%end%>
