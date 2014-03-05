@@ -47,15 +47,15 @@
 
 			<% if user_signed_in? %>
 				<%= form_for [@place, Comment.new] do |f| %>
-					<p>
-						<%= f.text_field :body, class:"form-control"  %>
+					<div class="panel-body"><p>
+						<%= f.text_field :body, class:"form-control"%>
 					</p>
 					<p><%=f.submit "Add Comment", class: "btn btn-primary" %></p>
 				<%end%>
 			<%else%>
 			<div class="comment-custom">
 					<%= link_to "Quick Sign Up to Comment", new_user_registration_path, class: "btn btn-primary"%>
-				<%end%>
+				<%end%></div>
 				<h5> Stag Comments </h5>
 				<%= render :partial => @place.comments %>
 			</div>
