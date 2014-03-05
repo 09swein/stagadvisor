@@ -25,7 +25,7 @@ gem 'masonry-rails', '~> 0.2.0'
 gem 'jbuilder', '~> 1.2'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
-gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'bootstrap-sass'
 group :doc do
   gem 'sdoc', require: false
 end
