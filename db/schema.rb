@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20131213234217352) do
   add_index "comments", ["place_id"], name: "index_comments_on_place_id"
 
   create_table "places", force: true do |t|
-    t.string   "description"
-    t.string   "attractions"
-    t.string   "restaurants"
+    t.text     "description"
+    t.text     "attractions"
+    t.text     "restaurants"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20131213234217352) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "headline"
-    t.string   "hotel"
-    t.string   "ladies"
+    t.text     "hotel"
+    t.text     "ladies"
     t.integer  "restaurantstars"
     t.integer  "attractionstars"
     t.integer  "ladiesstars"
