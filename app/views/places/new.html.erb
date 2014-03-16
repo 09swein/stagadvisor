@@ -1,5 +1,6 @@
 <div class="panel panel-body">
 <h1>New place</h1>
+<h6><b>It is recommended that you write your review in a word processor,</b> and then copy and paste to this form. Sometime the server may reject your posting, and we wouldn't want all your hard work to go to waste! :) </h6>
 <%if current_user.try(:admin?) or current_user.try(:editor?) %>
 <%= render 'form' %>
 <%else%>
